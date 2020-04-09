@@ -1,0 +1,23 @@
+.app-logo {
+    height: 23px;
+    width: 97px;
+    background: url('../../assets/images/logo.png');
+}
+
+.app-login-box h4 {
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+.app-login-box h4 div {
+    opacity: .6;
+}
+
+.app-login-box h4 span {
+    font-size: 1.1rem;
+}
+
+.btn {
+    font-size: 0.8rem;
+    font-weight: 500;
+}

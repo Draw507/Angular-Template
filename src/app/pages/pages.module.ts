@@ -9,7 +9,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    PagesComponent,
     DashboardComponent
   ],
   imports: [
@@ -19,7 +18,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SharedModule
   ],
   exports: [
-    PagesComponent
   ]
 })
 export class PagesModule { }

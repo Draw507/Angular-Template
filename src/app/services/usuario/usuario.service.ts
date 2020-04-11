@@ -63,17 +63,15 @@ export class UsuarioService {
       localStorage.removeItem('email');
     }
 
-    // TODO: Reemplazar este código por el llamado al servicio de login
-    this.guardarStorage('1', '1010101010', usuario);
-
-    /*
-    let url = URL_SERVICIOS + '/login';
+    const url = URL_SERVICIOS + '/api/login';
 
     return this.http.post(url, usuario)
-    .pipe(map((resp: any) => {
-      this.guardarStorage(resp.id, resp.token, resp.usuario);
-      return true;
-    }));
-    */
+    .pipe(
+      map((resp: any) => {
+        this.guardarStorage('0', resp.token, usuario);
+        return true;
+      })
+    );
+
   }
 }

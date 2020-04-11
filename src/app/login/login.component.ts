@@ -11,17 +11,23 @@ import { Usuario } from '../models/usuario.model';
 })
 export class LoginComponent implements OnInit {
 
-  recuerdame: boolean = false;
-  email: string;
+  recuerdame = false;
+  loading = false;
+  year: number;
+  // TODO: Credenciales de prueba
+  email = 'eve.holt@reqres.in';
+  password = 'cityslicka';
 
   constructor(
     private router: Router,
     private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.year = new Date().getFullYear();
   }
 
   ingresar(forma: NgForm) {
+    console.log(forma.invalid);
     if (forma.invalid) {
       return;
     }
@@ -32,18 +38,16 @@ export class LoginComponent implements OnInit {
       forma.value.password
     );
 
-    // TODO: Reemplazar este código
-
-    this.usuarioService.login(usuario, forma.value.recuerdame);
-
-    this.router.navigate(['/dashboard']);
-
-    /*
+    this.loading = true;
 
     this.usuarioService.login(usuario, forma.value.recuerdame)
-    .subscribe(resp => this.router.navigate(['/dashboard']));
+    .subscribe(resp => {
+      this.loading = false;
+      window.location.href = '#/dashboard';
+    }, (err) => {
+      console.log('usuarioService.login', err);
+    });
 
-    */
   }
 
 }

@@ -6,37 +6,46 @@
                     <div class="app-logo mx-auto mb-3"></div>
                     <div class="modal-dialog w-100 mx-auto">
                         <div class="modal-content">
-                            <form ngNativeValidate #f="ngForm" class="" id="loginform" (ngSubmit)="ingresar(f)">
+                            <form #f="ngForm" class="" id="loginform" (ngSubmit)="ingresar(f)" autocomplete="off">
                                 <div class="modal-body">
                                     <div class="h5 modal-title text-center">
                                         <h4 class="mt-2">
-                                            <div>Welcome back,</div>
-                                            <span>Please sign in to your account below.</span>
+                                            <div>Bienvenido,</div>
+                                            <span>Por favor ingresa tus credenciales.</span>
                                         </h4>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-12">
-                                            <div class="position-relative form-group"><input [ngModel]="email" name="email" placeholder="Email here..." type="email" class="form-control" autocomplete="off"></div>
+                                            <div class="position-relative form-group">
+                                                <input [ngModel]="email" [ngClass]="{'is-invalid': f.submitted && f.controls['email'].errors}" name="email" placeholder="Correo electrónico" type="email" class="form-control" required>
+                                                <span class="invalid-feedback animated fadeIn">Ingrese su correo electrónico</span>
+                                            </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="position-relative form-group"><input name="password" ngModel name="password" placeholder="Password here..." type="password" class="form-control" autocomplete="off"></div>
+                                            <div class="position-relative form-group">
+                                                <input name="password" [ngModel]="password" [ngClass]="{'is-invalid': f.submitted && f.controls['password'].errors}" name="password" placeholder="Contraseña" type="password" class="form-control" required>
+                                                <span class="invalid-feedback animated fadeIn">Ingrese su contraseña</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="position-relative form-check"><input [(ngModel)]="recuerdame" name="recuerdame" type="checkbox" class="form-check-input"><label for="exampleCheck" class="form-check-label">Keep me logged in</label></div>
 
                                     <div class="divider"></div>
-                                    <h6 class="mb-0">No account? <a href="javascript:void(0);" class="text-primary">Sign up now</a></h6>
+                                    <h6 class="mb-0">¿No tienes cuenta? <a href="javascript:void(0);" class="text-primary">Registrarme</a></h6>
                                 </div>
                                 <div class="modal-footer clearfix">
-                                    <div class="float-left"><a href="javascript:void(0);" class="btn-lg btn btn-link">Recover Password</a></div>
+                                    <div class="float-left"><a href="javascript:void(0);" class="btn-lg btn btn-link">Olvide mi contraseña</a></div>
                                     <div class="float-right">
-                                        <button type="submit" class="btn btn-primary btn-lg">Login to Dashboard</button>
+                                        <button type="submit" class="btn btn-primary btn-lg" [disabled]="loading">
+                                            <span *ngIf="!loading">Ingresar</span>
+                                            <img *ngIf="loading" src="assets/svg/loaders/oval.svg" width="20" alt="">                                            
+                                        </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div class="text-center text-white opacity-8 mt-3">Copyright © ArchitectUI 2019</div>
+                    <div class="text-center text-white opacity-8 mt-3">Copyright © @draw507 {{ year }}</div>
                 </div>
             </div>
         </div>

@@ -14,11 +14,11 @@ export class LoginGuardGuard implements CanActivate {
     private router: Router) {}
 
     canActivate() {
+      console.log('[LoginGuardGuard][canActivate]');
+
       if (this.usuarioService.estaLogueado()) {
-        console.log('PASO EL GUARD');
         return true;
       } else {
-        console.log('NO PASO EL GUARD');
         this.router.navigate(['/login']);
         return false;
       }

@@ -1,23 +1,30 @@
-.app-logo {
-    height: 23px;
-    width: 97px;
-    background: url('../../assets/images/logo.png');
+.login-block {
+    margin: 30px auto;
+    min-height: 93.6vh
 }
 
-.app-login-box h4 {
-    margin-bottom: 1.5rem;
-    font-weight: normal;
+.login-block .auth-box {
+    margin: 20px auto 0;
+    max-width: 450px
 }
 
-.app-login-box h4 div {
-    opacity: .6;
+.login-block .auth-box .confirm h3 {
+    color: #4099ff;
+    font-size: 34px
 }
 
-.app-login-box h4 span {
-    font-size: 1.1rem;
+.login-block .auth-box i.icofont-check-circled {
+    font-size: 42px
 }
 
-.btn {
-    font-size: 0.8rem;
+.login-block.offline-404 .auth-box {
+    max-width: 650px
+}
+
+.login-block.offline-404 .auth-box h1 {
+    color: #2c3e50;
+    font-size: 160px;
     font-weight: 500;
+    letter-spacing: 5px;
+    text-shadow: 3px -2px 4px rgba(128, 128, 128, .57)
 }

@@ -1,53 +1,68 @@
-<div class="app-container app-theme-white body-tabs-shadow">
-    <div class="app-container">
-        <div class="h-100 bg-plum-plate bg-animation">
-            <div class="d-flex h-100 justify-content-center align-items-center">
-                <div class="mx-auto app-login-box col-md-8">
-                    <div class="app-logo mx-auto mb-3"></div>
-                    <div class="modal-dialog w-100 mx-auto">
-                        <div class="modal-content">
-                            <form #f="ngForm" class="" id="loginform" (ngSubmit)="ingresar(f)" autocomplete="off">
-                                <div class="modal-body">
-                                    <div class="h5 modal-title text-center">
-                                        <h4 class="mt-2">
-                                            <div>Bienvenido,</div>
-                                            <span>Por favor ingresa tus credenciales.</span>
-                                        </h4>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-12">
-                                            <div class="position-relative form-group">
-                                                <input [ngModel]="email" [ngClass]="{'is-invalid': f.submitted && f.controls['email'].errors}" name="email" placeholder="Correo electrónico" type="email" class="form-control" required>
-                                                <span class="invalid-feedback animated fadeIn">Ingrese su correo electrónico</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="position-relative form-group">
-                                                <input name="password" [ngModel]="password" [ngClass]="{'is-invalid': f.submitted && f.controls['password'].errors}" name="password" placeholder="Contraseña" type="password" class="form-control" required>
-                                                <span class="invalid-feedback animated fadeIn">Ingrese su contraseña</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="position-relative form-check"><input [(ngModel)]="recuerdame" name="recuerdame" type="checkbox" class="form-check-input"><label for="exampleCheck" class="form-check-label">Keep me logged in</label></div>
-
-                                    <div class="divider"></div>
-                                    <h6 class="mb-0">¿No tienes cuenta? <a href="javascript:void(0);" class="text-primary">Registrarme</a></h6>
+<section class="login-block">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <form #f="ngForm" class="" id="loginform" (ngSubmit)="ingresar(f)" autocomplete="off" class="md-float-material form-material">
+                    <div class="text-center">
+                        <img src="../../assets/images/logo.webp" alt="logo.png">
+                    </div>
+                    <div class="auth-box card">
+                        <div class="card-block">
+                            <div class="row m-b-20">
+                                <div class="col-md-12">
+                                    <h3 class="text-center txt-primary">Iniciar Sesión</h3>
                                 </div>
-                                <div class="modal-footer clearfix">
-                                    <div class="float-left"><a href="javascript:void(0);" class="btn-lg btn btn-link">Olvide mi contraseña</a></div>
-                                    <div class="float-right">
-                                        <button type="submit" class="btn btn-primary btn-lg" [disabled]="loading">
-                                            <span *ngIf="!loading">Ingresar</span>
-                                            <img *ngIf="loading" src="assets/svg/loaders/oval.svg" width="20" alt="">                                            
-                                        </button>
+                            </div>
+                            <div class="row m-b-20">
+                                <div class="col-md-6">
+                                    <button class="btn btn-facebook m-b-20 btn-block">facebook</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-twitter m-b-20 btn-block">twitter</button>
+                                </div>
+                            </div>
+                            <p class="text-muted text-center p-b-5">Inicia sesión con tu cuenta regular</p>
+                            <div class="form-group form-primary">
+                                <input [ngModel]="email" [ngClass]="{'is-invalid': f.submitted && f.controls['email'].errors, 'fill': email}" name="email" type="email" class="form-control" required>
+                                <span class="form-bar"></span>
+                                <label class="float-label">Correo electrónico</label>
+                                <span class="invalid-feedback animated fadeIn">Ingrese su correo electrónico</span>
+                            </div>
+                            <div class="form-group form-primary">
+                                <input name="password" [ngModel]="password" [ngClass]="{'is-invalid': f.submitted && f.controls['password'].errors, 'fill': password}" name="password" type="password" class="form-control" required>
+                                <span class="form-bar"></span>
+                                <label class="float-label">Contraseña</label>
+                                <span class="invalid-feedback animated fadeIn">Ingrese su contraseña</span>
+                            </div>
+                            <div class="row m-t-25 text-left">
+                                <div class="col-12">
+                                    <div class="checkbox-fade fade-in-primary">
+                                        <label>
+                        <input [(ngModel)]="recuerdame" name="recuerdame"  type="checkbox" value="">
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                        <span class="text-inverse">Recuérdame</span>
+                        </label>
+                                    </div>
+                                    <div class="forgot-phone text-right float-right">
+                                        <a href="#" class="text-right f-w-600"> Recuperar contraseña</a>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="row m-t-30">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" [disabled]="loading">
+                                        <span *ngIf="!loading">Ingresar</span>
+                                        <img *ngIf="loading" src="assets/svg/loaders/oval.svg" width="20" alt="">                                            
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-inverse text-left">¿No tienes cuenta?
+                                <a href="#"> <b>Regístrate aquí </b></a>
+                            </p>
                         </div>
                     </div>
-                    <div class="text-center text-white opacity-8 mt-3">Copyright © @draw507 {{ year }}</div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
+</section>

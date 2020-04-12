@@ -1,7 +1,6 @@
 function init_plugins() {
 
     $(document).ready(function() {
-        // card js start
         $(".card-header-right .close-card").on('click', function() {
             var $this = $(this);
             $this.parents('.card').animate({
@@ -9,7 +8,6 @@ function init_plugins() {
                 '-webkit-transform': 'scale3d(.3, .3, .3)',
                 'transform': 'scale3d(.3, .3, .3)'
             });
-
             setTimeout(function() {
                 $this.parents('.card').remove();
             }, 800);
@@ -75,13 +73,10 @@ function init_plugins() {
                 $(".main-search").removeClass('open');
             }, 300);
         });
-        // card js end
         $("#styleSelector .style-cont").slimScroll({
             setTop: "1px",
             height: "calc(100vh - 480px)",
         });
-        /*chatbar js start*/
-        /*chat box scroll*/
         var a = $(window).height() - 80;
         $(".main-friend-list").slimScroll({
             height: a,
@@ -94,8 +89,6 @@ function init_plugins() {
             allowPageScroll: false,
             wheelStep: 5
         });
-
-        // search
         $("#search-friends").on("keyup", function() {
             var g = $(this).val().toLowerCase();
             $(".userlist-box .media-body .chat-header").each(function() {
@@ -103,8 +96,6 @@ function init_plugins() {
                 $(this).closest('.userlist-box')[s.indexOf(g) !== -1 ? 'show' : 'hide']();
             });
         });
-
-        // open chat box
         $('.displayChatbox').on('click', function() {
             var my_val = $('.pcoded').attr('vertical-placement');
             if (my_val == 'right') {
@@ -118,8 +109,6 @@ function init_plugins() {
             }
             $('.showChat').toggle('slide', options, 500);
         });
-
-        //open friend chat
         $('.userlist-box').on('click', function() {
             var my_val = $('.pcoded').attr('vertical-placement');
             if (my_val == 'right') {
@@ -133,7 +122,6 @@ function init_plugins() {
             }
             $('.showChat_inner').toggle('slide', options, 500);
         });
-        //back to main chatbar
         $('.back_chatBox').on('click', function() {
             var my_val = $('.pcoded').attr('vertical-placement');
             if (my_val == 'right') {
@@ -162,23 +150,12 @@ function init_plugins() {
             $('.p-chat-user').toggle('slide', options, 500);
             $('.showChat').css('display', 'block');
         });
-        // /*chatbar js end*/
         $('[data-toggle="tooltip"]').tooltip();
-
-        // wave effect js
         Waves.init();
         Waves.attach('.flat-buttons', ['waves-button']);
         Waves.attach('.float-buttons', ['waves-button', 'waves-float']);
         Waves.attach('.float-button-light', ['waves-button', 'waves-float', 'waves-light']);
         Waves.attach('.flat-buttons', ['waves-button', 'waves-float', 'waves-light', 'flat-buttons']);
-
-        // $('#mobile-collapse i').addClass('icon-toggle-right');
-        // $('#mobile-collapse').on('click', function() {
-        //     $('#mobile-collapse i').toggleClass('icon-toggle-right');
-        //     $('#mobile-collapse i').toggleClass('icon-toggle-left');
-        // });
-        // materia form
-
         $('.form-control').on('blur', function() {
             if ($(this).val().length > 0) {
                 $(this).addClass("fill");
@@ -197,27 +174,12 @@ function init_plugins() {
     });
     $(document).ready(function() {
         var $window = $(window);
-        // $('.loader-bar').animate({
-        //     width: $window.width()
-        // }, 1000);
-        // setTimeout(function() {
-        // while ($('.loader-bar').width() == $window.width()) {
-        // $(window).on('load',function(){
         $('.loader-bg').fadeOut();
-        // });
-
-        // break;
-
-        // }
-        // }, 2000);
     });
 
-    // toggle full screen
     function toggleFullScreen() {
         var a = $(window).height() - 10;
-
-        if (!document.fullscreenElement && // alternative standard method
-            !document.mozFullScreenElement && !document.webkitFullscreenElement) { // current working methods
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
             if (document.documentElement.requestFullscreen) {
                 document.documentElement.requestFullscreen();
             } else if (document.documentElement.mozRequestFullScreen) {

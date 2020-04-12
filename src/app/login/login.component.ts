@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.login(usuario, forma.value.recuerdame)
     .subscribe(resp => {
-      this.loading = false;
       window.location.href = '#/dashboard';
     }, (err) => {
+      this.loading = false;
       console.log('usuarioService.login', err);
     });
 

@@ -3507,7 +3507,7 @@ table thead .border-bottom-info th {
     display: block;
     position: relative;
     background: #f2f7fb;
-    min-height: calc(100vh - 70px)
+    min-height: calc(100vh - 73px)
 }
 
 .pcoded .pcoded-content {

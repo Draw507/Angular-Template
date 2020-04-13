@@ -4,4 +4,4 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 
 # Plantilla HTML
 
-La plantilla del proyecto esta basada en https://dashboardpack.com/theme-details/architectui-html-dashboard-free/?v=06f6a4892091
+La plantilla del proyecto esta basada en [Admindek](https://colorlib.com//polygon/admindek/default/index.html)

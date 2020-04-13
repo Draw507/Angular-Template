@@ -173,8 +173,9 @@ function init_plugins() {
         });
     });
     $(document).ready(function() {
-        var $window = $(window);
-        $('.loader-bg').fadeOut();
+        setTimeout(function() {
+            $('.loader-bg').fadeOut();
+        }, 800);
     });
 
     function toggleFullScreen() {

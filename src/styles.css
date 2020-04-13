@@ -5,3 +5,9 @@
 .pointer {
     cursor: pointer;
 }
+
+.loader-center {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}

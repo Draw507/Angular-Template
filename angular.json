@@ -28,6 +28,7 @@
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "src/assets/css/waves.css",
                             "src/assets/css/feather.css",
+                            "src/assets/css/animate.css",
                             "src/assets/css/admindek.css"
                         ],
                         "scripts": [
@@ -102,6 +103,7 @@
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "src/assets/css/waves.css",
                             "src/assets/css/feather.css",
+                            "src/assets/css/animate.css",
                             "src/assets/css/admindek.css"
                         ],
                         "scripts": [

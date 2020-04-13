@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   ingresar(forma: NgForm) {
-    console.log(forma.invalid);
+    console.log('[LoginComponent][ingresar] Forma inválida: ', forma.invalid);
     if (forma.invalid) {
       return;
     }
@@ -42,9 +42,9 @@ export class LoginComponent implements OnInit {
 
     this.usuarioService.login(usuario, forma.value.recuerdame)
     .subscribe(resp => {
-      this.loading = false;
       window.location.href = '#/dashboard';
     }, (err) => {
+      this.loading = false;
       console.log('usuarioService.login', err);
     });
 

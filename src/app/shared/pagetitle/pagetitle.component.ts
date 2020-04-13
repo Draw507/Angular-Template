@@ -11,6 +11,7 @@ import { map, filter } from 'rxjs/operators';
 export class PagetitleComponent implements OnInit {
 
   titulo: string;
+  descripcion: string = 'lorem ipsum dolor sit amet, consectetur adipisicing elit';
 
   constructor(
     private router: Router,

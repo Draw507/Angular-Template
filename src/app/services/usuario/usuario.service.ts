@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { URL_SERVICIOS } from '../../config/config';
 import { map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -63,7 +63,7 @@ export class UsuarioService {
       localStorage.removeItem('email');
     }
 
-    const url = URL_SERVICIOS + '/api/login';
+    const url = environment.url + '/api/login';
 
     return this.http.post(url, usuario)
     .pipe(
